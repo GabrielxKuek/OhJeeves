@@ -1,0 +1,242 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C58273EBAEA_generateChatCompletion_Create.Bundle;assembly=C58273EBAEA_generate.Yaqvg2AWclD19qi4S2z7q0z" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_ArticleContextLink" Type="InArgument(x:String)" />
+    <x:Property Name="Out_ArticleText" Type="OutArgument(x:String)" />
+    <x:Property Name="Out_ArticleCategorization" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
+  <sap:VirtualizedContainerService.HintSize>680,1023.2</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>C58273EBAEA_generate.Yaqvg2AWclD19qi4S2z7q0z</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="496,958.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="ArticleInformation" />
+      <Variable x:TypeArguments="njl:JObject" Name="DJArticleInformation" />
+      <Variable x:TypeArguments="x:String" Name="ArticleXtractor_API_Token" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="433.6,121.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[ArticleXtractor_API_Token]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Your ArticleXtractor API Token here"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" BodyFormat="application/xml" DisplayName="Http client" EnableSSLVerification="True" EndPoint="https://api.articlextractor.com/v1/extract" sap:VirtualizedContainerService.HintSize="433.6,111.2" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[ArticleInformation]" TimeoutMS="6000">
+      <ui:HttpClient.Attachments>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Attachments>
+      <ui:HttpClient.Cookies>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Cookies>
+      <ui:HttpClient.Headers>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Headers>
+      <ui:HttpClient.Parameters>
+        <InArgument x:TypeArguments="x:String" x:Key="api_token">[ArticleXtractor_API_Token]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="url">[In_ArticleContextLink]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="language">en</InArgument>
+      </ui:HttpClient.Parameters>
+      <ui:HttpClient.UrlSegments>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.UrlSegments>
+    </ui:HttpClient>
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="433.6,130.4" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[DJArticleInformation]" JsonString="[ArticleInformation]" />
+    <Assign sap:VirtualizedContainerService.HintSize="433.6,121.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[Out_ArticleText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[DJArticleInformation("data")("text").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <isactr:ConnectorActivity Configuration="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" ConnectionId="b5717734-263a-4a5a-a4fd-e958273ebaea" DisplayName="Generate Chat Completion" sap:VirtualizedContainerService.HintSize="433.6,276" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="67c3bebc-9c43-36e2-87bd-57bcbec902a8">
+      <isactr:ConnectorActivity.FieldObjects>
+        <isactr:FieldObject Name="model" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">gpt-4-0613</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="prompt" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">[Out_ArticleText]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="image_url" Type="FieldArgument" />
+        <isactr:FieldObject Name="instruction" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">You are to respond as a robot, only answering the bare minimum number of characters. Based on the article provided, output a one word answer categorizing the article as Opinion, Factual or Fake News</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="max_tokens" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int32">1920</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="n" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int32">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="temperature" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="top_p" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="stream" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="_stop" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="presence_penalty" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="frequency_penalty" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="user" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_text" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[Out_ArticleCategorization]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="Jit_generateChatCompletion" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="uiascb:generateChatCompletion_Create" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorActivity.FieldObjects>
+    </isactr:ConnectorActivity>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="433.6,108.8" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[Out_ArticleCategorization]" />
+  </Sequence>
+</Activity>

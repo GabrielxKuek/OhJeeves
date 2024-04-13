@@ -1,0 +1,57 @@
+{
+  "DisplayName": "Main",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "In_ArticleContextLink",
+      "DisplayName": "In_ArticleContextLink",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "https://www.theguardian.com/us-news/2024/apr/06/donald-trump-speech-analysis",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "Out_ArticleText",
+      "DisplayName": "Out_ArticleText",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "Out_ArticleCategorization",
+      "DisplayName": "Out_ArticleCategorization",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "ConnectorActivity_1_Connection0",
+      "DisplayName": "ConnectorActivity_1_uipath-openai-openai",
+      "Category": null,
+      "Tooltip": "Generate Chat Completion",
+      "Placeholder": null,
+      "Widget": "Connection",
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 1,
+      "DataSourceItems": null
+    }
+  ]
+}

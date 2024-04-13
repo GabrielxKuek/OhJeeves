@@ -1,0 +1,421 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.In_ArticleUrl="https://www.theguardian.com/us-news/2024/apr/06/donald-trump-speech-analysis" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C58273EBAEA_generateChatCompletion_Create.Bundle;assembly=C58273EBAEA_generate.U5fTOv3mAN1nlMgN4qdQF43" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_ArticleUrl" Type="InArgument(x:String)" />
+    <x:Property Name="Out_AnalysisResult" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
+  <sap:VirtualizedContainerService.HintSize>680,4056.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>C58273EBAEA_generate.U5fTOv3mAN1nlMgN4qdQF43</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="592,3992" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="ArticleInformation" />
+      <Variable x:TypeArguments="x:String" Name="GEMINI_API_KEY" />
+      <Variable x:TypeArguments="njl:JObject" Name="DJArticleInformation" />
+      <Variable x:TypeArguments="njl:JObject" Name="GeminiInput" />
+      <Variable x:TypeArguments="x:String" Name="GeminiOutput" />
+      <Variable x:TypeArguments="njl:JObject" Name="DJGeminiOutput" />
+      <Variable x:TypeArguments="x:String" Name="KeyWords" />
+      <Variable x:TypeArguments="sd:DataTable" Name="SimilarArticleTable" />
+      <Variable x:TypeArguments="x:String" Name="GPTContext" />
+      <Variable x:TypeArguments="x:String" Name="ArticleText" />
+      <Variable x:TypeArguments="x:String" Name="ArticleXtractor_API_Token" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="529.6,121.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[ArticleXtractor_API_Token]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Your ArticleXtractor API Token here"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="529.6,121.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[GEMINI_API_KEY]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Your GeminiAI API Token here"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="529.6,96" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Extract article text" />
+    <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" BodyFormat="application/xml" DisplayName="Http client" EnableSSLVerification="True" EndPoint="https://api.articlextractor.com/v1/extract" sap:VirtualizedContainerService.HintSize="529.6,111.2" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[ArticleInformation]" TimeoutMS="6000">
+      <ui:HttpClient.Attachments>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Attachments>
+      <ui:HttpClient.Cookies>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Cookies>
+      <ui:HttpClient.Headers>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Headers>
+      <ui:HttpClient.Parameters>
+        <InArgument x:TypeArguments="x:String" x:Key="api_token">[ArticleXtractor_API_Token]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="language">en</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="url">[In_ArticleUrl]</InArgument>
+      </ui:HttpClient.Parameters>
+      <ui:HttpClient.UrlSegments>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.UrlSegments>
+    </ui:HttpClient>
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="529.6,100" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[DJArticleInformation]" JsonString="[ArticleInformation]" />
+    <Assign sap:VirtualizedContainerService.HintSize="529.6,121.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[ArticleText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[DJArticleInformation("data")("text").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="529.6,116" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Using GeminiAI to identify article's key words" />
+    <Assign sap:VirtualizedContainerService.HintSize="529.6,123.2" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JObject">[GeminiInput]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JObject" xml:space="preserve">[JObject.Parse("{
+    'contents': {
+        'parts': {
+            'text': '" + DJArticleInformation("data")("title").ToString + " give me only the important words or names that are unique to this sentence and relating to this topic in this format: only include each important word, name or phrase by putting them between quotation marks and having the word OR between each word'
+        }
+    },
+    'safetySettings': [
+        {
+            'category': 'HARM_CATEGORY_DANGEROUS_CONTENT',
+            'threshold': 'BLOCK_NONE'
+        },
+        {
+            'category': 'HARM_CATEGORY_HARASSMENT',
+            'threshold': 'BLOCK_NONE'
+        },
+        {
+            'category': 'HARM_CATEGORY_SEXUALLY_EXPLICIT',
+            'threshold': 'BLOCK_NONE'
+        },
+        {
+            'category': 'HARM_CATEGORY_HATE_SPEECH',
+            'threshold': 'BLOCK_NONE'
+        }
+    ]
+}")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[GeminiInput.ToString]" BodyFormat="application/json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="[&quot;https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=&quot; + GEMINI_API_KEY]" sap:VirtualizedContainerService.HintSize="529.6,111.2" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="POST" Result="[GeminiOutput]" TimeoutMS="6000">
+      <ui:HttpClient.Attachments>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Attachments>
+      <ui:HttpClient.Cookies>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Cookies>
+      <ui:HttpClient.Headers>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Headers>
+      <ui:HttpClient.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Parameters>
+      <ui:HttpClient.UrlSegments>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.UrlSegments>
+    </ui:HttpClient>
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="529.6,100" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[DJGeminiOutput]" JsonString="[GeminiOutput]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="529.6,125.6" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[DJGeminiOutput]" />
+    <Assign sap:VirtualizedContainerService.HintSize="529.6,121.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[KeyWords]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[DJGeminiOutput("candidates")(0)("content")("parts")(0)("text").ToString.Replace(" ", "+").Replace("""", """""")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="529.6,130.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Value stored in keywords: &quot; + KeyWords]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Firefox: New Tab" sap:VirtualizedContainerService.HintSize="529.6,623.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="372fb8e0-6738-4b24-863e-cfd354076205" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,366.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Comment sap:VirtualizedContainerService.HintSize="353.6,96" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Max pages is set to 2" />
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[SimilarArticleTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='TableURL'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='href'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="353.6,182.4" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Page" MaximumResults="2" ScopeIdentifier="372fb8e0-6738-4b24-863e-cfd354076205" Version="V3">
+              <uix:NExtractData.NextLink>
+                <uix:TargetAnchorable BrowserURL="https://www.google.com/search?client=firefox-b-d&amp;sca_esv=2465539c7fa84006&amp;sxsrf=ACQVn09lMuFLZKG3SGNCwv_31rtIKzkmow:1712773986174&amp;q=donald+trump&amp;tbm=nws&amp;source=lnms&amp;prmd=nivsmbtz&amp;sa=X&amp;ved=2ahUKEwix5ZqopLiFAxU5b2wGHRGWD90Q0pQJegQICxAB&amp;biw=1536&amp;bih=703&amp;dpr=1.25" CvTextArea="816, 868, 38, 16" CvTextArgument="Next" CvType="Text" DesignTimeRectangle="818, 868, 36, 21" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Next' parentid='pnnext' tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Next' parentid='pnnext' type='' tag='SPAN' class='' check:innerText='Next' /&gt;" Guid="deec22fc-ee2e-4d1d-90c5-0957ad06f0cc" ScopeSelectorArgument="&lt;html app='firefox.exe' title='donald trump - Google Search' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+              </uix:NExtractData.NextLink>
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="253, 392, 815, 2216" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='rso' tag='DIV' /&gt;" Guid="6f778e62-13dd-42c9-8700-8b5e26f1c858" InformativeScreenshot="61bd20c55c96cd3735f14e67d80eef30.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='trump - Google Search' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Firefox" IconBase64="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" InformativeScreenshot="996ac12ce7205664ccf34cedb62a51d6.png" Selector="&lt;html app='firefox.exe' title='New Tab' /&gt;" Title="New Tab" Url="[&quot;https://www.google.com/search?sca_esv=eec4b8c5dff95975&amp;sxsrf=ACQVn0_4N-PbcBAyRAEwQM-coSU45BMstA:1712322133089&amp;q=&quot; + KeyWords + &quot;after%3A&quot; + (System.DateTime.Now.Year - 1).ToString + &quot;&amp;tbm=nws&amp;source=lnms&amp;prmd=ivsnmbtz&amp;sa=X&amp;ved=2ahUKEwjk--6DkauFAxW77TgGHdbuDnEQ0pQJegQICRAB&quot;]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="529.6,125.6" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[SimilarArticleTable.Rows(2).Item(&quot;TableURL&quot;).ToString]" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="529.6,153.6" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// we should actually use SimilarArticleTable.Rows.Count - 1 to get based on number of rows, but because this is an example im only doing 5" />
+    <ui:RepeatNumberOfTimesX DisplayName="Repeat Number of Times" sap:VirtualizedContainerService.HintSize="529.6,855.2" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_1" NumberOfTimes="5" StartAt="1">
+      <ui:RepeatNumberOfTimesX.Body>
+        <ActivityAction x:TypeArguments="x:Int32">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentNumber" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,648" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="TempText" />
+              <Variable x:TypeArguments="njl:JObject" Name="DJTempText" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Comment sap:VirtualizedContainerService.HintSize="433.6,115.2" sap2010:WorkflowViewState.IdRef="Comment_5" Text="// Extracts text from article for each table value" />
+            <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" BodyFormat="application/xml" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://api.articlextractor.com/v1/extract" sap:VirtualizedContainerService.HintSize="433.6,111.2" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="GET" Result="[TempText]" TimeoutMS="6000">
+              <ui:HttpClient.Attachments>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </ui:HttpClient.Attachments>
+              <ui:HttpClient.Cookies>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </ui:HttpClient.Cookies>
+              <ui:HttpClient.Headers>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </ui:HttpClient.Headers>
+              <ui:HttpClient.Parameters>
+                <InArgument x:TypeArguments="x:String" x:Key="language">en</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="api_token">[ArticleXtractor_API_Token]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="url">[SimilarArticleTable.Rows(CurrentNumber - 1).Item("TableURL").ToString]</InArgument>
+              </ui:HttpClient.Parameters>
+              <ui:HttpClient.UrlSegments>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </ui:HttpClient.UrlSegments>
+            </ui:HttpClient>
+            <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="433.6,100" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_3" JsonObject="[DJTempText]" JsonString="[TempText]" />
+            <Assign sap:VirtualizedContainerService.HintSize="433.6,121.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[GPTContext]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[GPTContext + " " + DJTempText("data")("text").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;GPTContext after operation number &quot; + CurrentNumber.ToString + &quot;: &quot; + GPTContext]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:RepeatNumberOfTimesX.Body>
+    </ui:RepeatNumberOfTimesX>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="529.6,130.4" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;Final GPT Context\n&quot; + GPTContext]" />
+    <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACu1Y3XLbuBV+FYxu2s5IrGQp2axncmErzsZdx1YtObnYejyQeCShJgEGBCVrM3mDfYC+QF9sn6TfAUmFNCU73ta7N51kbBPnADj4znd+gM+tt4qiMB0a7aTSZFuHn1tjkna2lNOIcmHr8KfrdutUJ5nbDnxuncuYWoet2IQUtdqtNypNIrkpRt/zqPAfEFE6sypxymiIJksSkbQL/qkXmcQffg3x57Oz938RzogsJTE3Vjhowg4nZiZOIuL5gXhDc5lFLmXFReI6A2ww2SS8aeqs0gt8j411Fzbk0/R4ez/jg4wy1vKTOt2XvT40T3QW+9PskH5p14f7wYuOy+zUdHq97suGeNBZqRQmdhJLK0Xr1pdrf3S1wKk/YycG9Cole7Eia1WIec5m1G6NTKoKbEZWxdJusHbrktLE6HSrdUmfMmUpLL+9J87MTBZTj024wYEu9FDqlUxLtdPUKx7NWG0kLWmXi9j8wlmJBb6u4cNROfwAvAcNeD9a5UhILSiWKmIvSaFpLVIZUSoikmGrCsu+w/+Gw1ZOhIUWdJPZJjFPWSKuLs928lKVUrY7JR0KGRm9EGvlljhHTGnKCmpeaEoto02qUoH/miikMBDi3Dg6BHkxtlZRJIyONmJt7G2+DLP6h9GkM/iQ8/5hgPtVsCquzGMw/7uYPl6aNSZfZgDaSy9p7mfci9TTdAg3eHTnMko9ST7CvHlk1id3YG/KNN4Ky1W8g3nh3Wy//nLNDqhZ9I5Z/jSLStb+BoOKkN4RqmwbgnE31/4P6n8F6s7QrIaiBq0zz4pmMNZltXCsyFKxyMAkHzlHpxya1ifHUCiNqFzLDUQoE7F0syWSzMZkFiKHXFevFzqLouDheBvsSU5jmmHDKmWekI5ieXfjzC0hahuFUt6JyVbUSEiYqeIshuXxlKwwcxyDlZGXEBwUbutknsORkEKxINRx6SCUOl2TDcRbwq/tTIvKi5ASdJfgW62oDlL/1aBbAYlxXACZGkovgIGxwDtX6B+07teB3vcH3aD7HGA2aXTegO6oAhiIgeSSOtFDbp5wVg7JkY3R7aQCKRMY602lxUDLYdQMsoJuPodbAvPvdR+9x1B6+ThKzwORozhhCmSWGmBN6rIabL/+8i/x6y//Fj/+Q28RnJJbE2nR9dw6AIbv1GIJwcpnChGpWxLd4FWOUyzxxcCZzKFdRIUD2yxmmrgt1ksVgXvg7f3ZB5XZqpg1NzM0gkzicOsxlTo12++F3OS6E76rOCE0GXqw380LJrlJmvibRIz2E7YOd07ZEjPGNVdr+7/n98MaxqZIlCikT8Po1R+GEVIwybgB0ng7XEPp45Jwbj6yyCeKqZzdikRap2TEOXDBzUIgTufo3ly7xMaTa0rc0SFFIgFIJzu+LUM7jm684wW0wk8A6SN/A33kBLR4K7Sx3Lq3v7ZvxeY5J32mnW5QiHjZQ/HTm4vzk+uyV6w7wncwFWdMjUFu0nVvfH8f+6LveQ70TZOg42KwhvxVwuYPgNenjDRnxzUcUZTkUZEkebmy+qCwinlmC3exFwLP5DyRAjFHdy6fpg3f8Pz9s0AXy5QbPbmA956Fp9yEsjk3KJkycpsdl6VcQYy+KtQQPK/Hd+cgKDNqNxC5mSsq06LfRf1M/uZUkHgqORuiPgH5HFZmqUwSdM6igM6DmjLPkCKUnoGmKXuCZb7Z/lOeciO1NAY+MMLJ6FbIKdJ1sVeiZmkd9O4j2aPXezx9PFMvMLc5TTZ7/fK21PgdHAOUlUVbxVWK6b/depd3QvoG71iCd10eFTgPpBqmkJ0CoPiJXjr4w7yEMm4bjuGXkB1lMNMKoAlUMe3UXMExwMDHlsfUt/a4l3d4Td9RzJZihteGJUWJuIB78gtCbLRyaI3L5mGGvD/FnKenk/7/DhHcli58W9R8RWNq7GwVftg285NCpXFH8LQq7wGcO/MGtnIPQHXKm9lHzlq9/BSvMJS6ysX7/pNU/j3M/Db7HmvyMz9EkL8pd1NaO8RNbrhtxhuYlHgI1hN1xRoyX496pUbSLYNTbtG5Mhk9RtUHQgE/VqzgUEqD8ccTMMz/OXzx6uC7/snx0cnRHqtuhghdR8FxpsOIggeV2mLXesHVi/nkYtWPj857Onq/OB98Cv/+dtBviw9k+bXjNRou/ofpYCua9deaMmdl1BYjxK6a/Ugbf298zSRuNZ31jV7gtxbA77VLmsL1fPuWKGd4MQTuaHSgjufO3Das5q3DYng31gguY2EOR7pKAHXHcJpUxS9oFThvCoeUfIEt039iduHavQx451zyHjXPwEIOQcchN5S46+OA5jZLykcLJm0+fmzNGhniFDehYnyEThH9WPUIg/oRqqJeP+jxde3bDETeyYnFh/Neb1h9MZ5gjImIr7/uXemseBKHEvmjy/QYC94iVqGrF3xK7+Av/wG8DtxduhcAAA==" ConnectionId="b5717734-263a-4a5a-a4fd-e958273ebaea" DisplayName="Generate Chat Completion" sap:VirtualizedContainerService.HintSize="529.6,276" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="67c3bebc-9c43-36e2-87bd-57bcbec902a8">
+      <isactr:ConnectorActivity.FieldObjects>
+        <isactr:FieldObject Name="model" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">gpt-4-0613</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="prompt" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">["I am going to provide an article and from it, figure out how much it leans towards the left, right or center for its appropriate context. Output the bare minimum result in the following format, but be as accurate as possible in the analysis: 'Left: %, Center: %, Right: %' " + ArticleText]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="image_url" Type="FieldArgument" />
+        <isactr:FieldObject Name="instruction" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">You are an expert in the following pieces of information. drawing from context from these pieces of information where relevant, answer any input provided to the best of your ability</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="max_tokens" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int32">1920</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="n" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Int32">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="temperature" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="top_p" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">1</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="stream" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="_stop" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="presence_penalty" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="frequency_penalty" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Double">0</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="user" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_text" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[Out_AnalysisResult]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="Jit_generateChatCompletion" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="uiascb:generateChatCompletion_Create" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorActivity.FieldObjects>
+    </isactr:ConnectorActivity>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="529.6,125.6" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[Out_AnalysisResult]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="529.6,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[Out_AnalysisResult]" />
+  </Sequence>
+</Activity>

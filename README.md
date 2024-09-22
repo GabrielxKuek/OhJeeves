@@ -1,5 +1,5 @@
 # SimplifyNextUiPathHackathon
-RPA Hackathon with no problem statement. OhJeeves - your one-stop solution to curbing the spread of fake news online
+Cut Through the Noise. Get to the Truth.
 
 # Main Features
 1. Search for Articles
